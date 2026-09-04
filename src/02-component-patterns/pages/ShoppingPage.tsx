@@ -1,4 +1,5 @@
 import { ProductButtons, ProductCard, ProductImage, ProductTitle } from "../components";
+import '../styles/custom-styles.css';
 
 const product = {
     id: '1',
@@ -8,7 +9,7 @@ const product = {
 
 export const ShoppingPage = () => {
     return (
-        <div>
+        <div >
             <h1>Shopping Store</h1>
             <hr />
             <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
@@ -19,11 +20,18 @@ export const ShoppingPage = () => {
                     <ProductCard.Buttons />
 
                 </ProductCard >
-                <ProductCard product={product} >
+                <ProductCard product={product} className="bg-dark">
 
-                    <ProductImage img={product.img} />
-                    <ProductTitle title={product.title} />
-                    <ProductButtons />
+                    <ProductImage img={product.img} className="custom-image" />
+                    <ProductTitle title={product.title} className="text-white" />
+                    <ProductButtons className="custom-buttons" />
+
+                </ProductCard >
+                <ProductCard product={product} className="bg-dark" style={{ backgroundColor: 'red' }}>
+
+                    <ProductImage img={product.img} className="custom-image" style={{ boxShadow: '1px 1px 5px rgba(0, 0, 0, 0.3)' }} />
+                    <ProductTitle title={product.title} className="text-bold text-white" />
+                    <ProductButtons className="custom-buttons" style={{ display: 'flex', justifyContent: 'end' }} />
 
                 </ProductCard >
             </div>
